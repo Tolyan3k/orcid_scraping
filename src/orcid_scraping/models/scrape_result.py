@@ -21,19 +21,23 @@ class ScrapeResult[T](BaseModel):
         examples=[
             [
                 {
-                    "title": "Comparative analysis of parallel discrete event simulation algorithms",
+                    "title": (
+                        "Comparative analysis of parallel discrete event simulation algorithms"
+                    ),
                     "url": "https://doi.org/10.1117/12.3060495",
                 },
                 {
                     "title": "Generalized Lyapunov Matrix Model for Stability Analysis",
                     "url": "https://doi.org/10.2139/ssrn.5087186",
                 },
-            ]
+            ],
         ],
     )
     scraper_data: T | None = Field(
         default=None,
-        description="Optional container for scraper-specific metadata and intermediate processing data",
+        description=(
+            "Optional container for scraper-specific metadata and intermediate processing data"
+        ),
         examples=[
             {"api_version": "3.0", "response_time_ms": 245, "pages_scraped": 3},
             {"html_source_hash": "a1b2c3d4e5", "scrape_timestamp": "2023-10-15T08:30:00Z"},

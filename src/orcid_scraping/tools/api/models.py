@@ -8,9 +8,11 @@ class ApiScrapeResultData(BaseModel):
     """Container for scraped ORCID works data including pagination information and works list."""
 
     pages: list["WorksExtendedPage"] = Field(
-        description="List of paginated result pages containing grouped works"
+        description="List of paginated result pages containing grouped works",
     )
-    works: list["WorkInfo"] = Field(description="Flattened list of all works across all pages")
+    works: list["WorkInfo"] = Field(
+        description="Flattened list of all works across all pages",
+    )
 
 
 class ApiScrapeResult(ScrapeResult[ApiScrapeResultData]):
