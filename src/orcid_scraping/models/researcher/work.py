@@ -1,6 +1,8 @@
 from pydantic import BaseModel, Field
 
-from orcid_scraping.models.researcher.work_url import OrcidResearcherWorkUrlBase
+from orcid_scraping.models.researcher.work_url import (
+    OrcidResearcherWorkUrlBase,
+)
 
 
 class OrcidResearcherWork(BaseModel):
@@ -12,6 +14,7 @@ class OrcidResearcherWork(BaseModel):
     """
 
     journal_title: str | None = Field(
+        default=None,
         description="",
         examples=[],
     )
@@ -30,6 +33,7 @@ class OrcidResearcherWork(BaseModel):
         ],
     )
     url: OrcidResearcherWorkUrlBase | None = Field(
+        default=None,
         description=(
             "Direct access URL to the full work content, typically a DOI link or publisher URL"
         ),
