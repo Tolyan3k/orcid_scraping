@@ -8,7 +8,6 @@ from orcid_scraping.models.scrape_result import ScrapeResult
 
 class OrcidScrapeTool(ABC):
     @abstractmethod
-    @pydantic.validate_call()
     def scrape_works(
         self,
         orcid: Orcid,
@@ -17,7 +16,6 @@ class OrcidScrapeTool(ABC):
 
 class OrcidScrapeAsyncTool(ABC):
     @abstractmethod
-    @pydantic.validate_call()
     async def scrape_works(
         self,
         orcid: Orcid,
